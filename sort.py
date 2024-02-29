@@ -1,3 +1,15 @@
+# 1. Name:
+#      Gavin Hart
+# 2. Assignment Name:
+#      Lab 08: Sort
+# 3. Assignment Description:
+#      This program reads a list of names from a JSON file, sorts them using a specific sorting algorithm (not Python's built-in sort), 
+#      and displays the sorted list. This demonstrates understanding of sorting algorithms and file handling in Python.
+# 4. What was the hardest part? Be as specific as possible.
+#      The most challenging part was implementing the sorting algorithm from scratch without relying on Python's built-in sort function. 
+#      Ensuring the algorithm efficiently and correctly sorted the list required careful consideration and testing, especially with edge cases.
+# 5. How long did it take for you to complete the assignment?
+#      4 hrs, a little longer because adding the automation was more difficult than expected.
 import json
 
 def read_json(filename):
