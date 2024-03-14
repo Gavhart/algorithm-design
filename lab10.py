@@ -9,7 +9,7 @@
 # 5. How long did it take for you to complete the assignment? 3hrs
 
 
-from datetime import datetime
+from datetime import datetime, timedelta
 
 def is_leap_year(year):
     return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
@@ -48,6 +48,17 @@ def demo():
             
             assert start_date.year >= 1753, "Year must be 1753 or later."
             assert 1 <= start_date.month <= 12 and 1 <= end_date.month <= 12, "Month must be between 1 and 12."
-            assert 1 <= start_date.day <= get_days_in_month(start_date.year, start_date.month)
+            assert 1 <= start_date.day <= get_days_in_month(start_date.year, start_date.month), "Invalid day for the given month and year."
+            assert 1 <= end_date.day <= get_days_in_month(end_date.year, end_date.month), "Invalid day for the given month and year."
+            assert start_date <= end_date, "End date must be after or the same as start date."
+            
+            delta = end_date - start_date
+            print(f"Result: There are {delta.days} days between the dates.")
         except AssertionError as e:
-            print(f"AssertionError: {e}")
+            print(f"Assertion Error: {e}")
+        except ValueError:
+            print("Value Error: Please ensure your dates are formatted correctly (YYYY-MM-DD) and are valid.")
+
+if __name__ == "__main__":
+    demo()
+
